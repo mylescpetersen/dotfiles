@@ -12,7 +12,7 @@ return {
 				ensure_installed = {
 					-- 🌐 Web Development
 					"html",
-					"cssls",  "eslint_d",
+					"cssls",  -- "eslint_d",
 
 					-- 🐍 Python
 					"pyright", -- "ruff_lsp",

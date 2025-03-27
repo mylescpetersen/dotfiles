@@ -1,4 +1,5 @@
 return {
+
   "nvimtools/none-ls.nvim",
   config = function()
     local null_ls = require("null-ls")
@@ -14,9 +15,13 @@ return {
 
         -- Diagnostics
         null_ls.builtins.diagnostics.rubocop,
-        null_ls.builtins.diagnostics.eslint_d,
       },
     })
     vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+    vim.keymap.set("n", "<leader>fw", function()
+      vim.lsp.buf.format({})
+      vim.cmd("edit!")
+      vim.cmd("write")
+    end, { desc = "Format file and write" })
   end,
 }

@@ -1,6 +1,8 @@
 vim.keymap.set("n", "<leader>lt", function()
   -- Step 1: Save current window ID
   local original_win = vim.api.nvim_get_current_win()
+  -- local cur_file = "%:p:h"
+
 
   -- Step 2: Close Neo-tree if it's open
   require("neo-tree.command").execute({ action = "close", source = "filesystem" })
@@ -29,4 +31,8 @@ vim.keymap.set("n", "<leader>lt", function()
   if vim.api.nvim_win_is_valid(original_win) then
     vim.api.nvim_win_close(original_win, true)
   end
+
+  -- Step 8: Re-open file
+  -- vim.cmd("edit " .. cur)
+
 end, { desc = "Left Neo-tree + terminal layout" })
