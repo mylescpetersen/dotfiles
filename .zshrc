@@ -112,6 +112,8 @@ alias zshrc="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
+
+
 ### ---- .bashrc -----
 
 
@@ -187,6 +189,7 @@ alias gl='git log'
 alias gp='git push'
 alias gpl='git pull'
 alias gco='git checkout'
+alias gundo='git reset --soft HEAD~1 && git push --force'
 
 alias h='history | tail -10'
 alias t='tmux'
@@ -245,3 +248,8 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+
+# Golang
+export PATH="$PATH:$HOME/go/bin"
